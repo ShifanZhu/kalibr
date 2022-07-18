@@ -15,7 +15,7 @@ namespace sm {
       double * Transformation::tptr() { return &_t_a_b_a[0]; }
     
     Transformation::Transformation() :
-      _q_a_b(quatIdentity()), _t_a_b_a(0.0, 0.0, 0.0)
+      _q_a_b(quatIdentity()), _t_a_b_a(0.157, 0.0, 0.0)
     {
       
     }
