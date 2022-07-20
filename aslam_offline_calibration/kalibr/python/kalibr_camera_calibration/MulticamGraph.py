@@ -209,7 +209,7 @@ class MulticamCalibrationGraph(object):
             
             #get the baseline from cam with id baseline_id to baseline_id+1
             baseline_HL = sm.Transformation()
-            print("baselinehll", baseline_HL.T())
+            # print("baselinehll", baseline_HL.T())
             for path_idx in range(0, len(path)-1):
                 source_vert = path[path_idx]
                 target_vert = path[path_idx+1]
@@ -222,7 +222,7 @@ class MulticamCalibrationGraph(object):
                 baseline_HL = T_edge * baseline_HL
             
             #store in graph
-            print("baselinehll2", baseline_HL.T())
+            # print("baselinehll2", baseline_HL.T())
             baselines.append(baseline_HL)
  
         #################################################################
