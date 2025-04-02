@@ -5,7 +5,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <aslam/cameras/GridCalibrationTargetCheckerboard.hpp>
 #include <sm/eigen/serialization.hpp>
-
+#include <opencv2/highgui/highgui_c.h>
 namespace aslam {
 namespace cameras {
 
@@ -50,8 +50,8 @@ GridCalibrationTargetCheckerboard::GridCalibrationTargetCheckerboard(
 void GridCalibrationTargetCheckerboard::initialize()
 {
   if (_options.showExtractionVideo) {
-    cv::namedWindow("Checkerboard corners", CV_WINDOW_AUTOSIZE);
-    cvStartWindowThread();
+    cv::namedWindow("Checkerboard corners", cv::WINDOW_AUTOSIZE);
+    cv::startWindowThread();
   }
 }
 

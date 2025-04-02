@@ -3,6 +3,7 @@
 
 //see http://docs.opencv.org/modules/imgproc/doc/geometric_transformations.html
 //for more details about the functions
+#include <opencv2/highgui/highgui_c.h>
 
 namespace aslamcv_helper {
 
@@ -20,7 +21,7 @@ using namespace cv;
 ///
 template<typename CAMERA_T>
 static void icvGetRectangles(boost::shared_ptr<CAMERA_T> camera_geometry,
-                             CvSize imgSize, cv::Rect_<float>& inner,
+                             cv::Size imgSize, cv::Rect_<float>& inner,
                              cv::Rect_<float>& outer) {
   const int N = 9;
   int x, y, k;
@@ -85,8 +86,8 @@ static void icvGetRectangles(boost::shared_ptr<CAMERA_T> camera_geometry,
 ///
 template<typename CAMERA_T>
 Eigen::Matrix3d getOptimalNewCameraMatrix(
-    boost::shared_ptr<CAMERA_T> camera_geometry, CvSize imgSize, double alpha,
-    CvSize newImgSize) {
+    boost::shared_ptr<CAMERA_T> camera_geometry, cv::Size imgSize, double alpha,
+    cv::Size newImgSize) {
 
   cv::Rect_<float> inner, outer;
   newImgSize = newImgSize.width * newImgSize.height != 0 ? newImgSize : imgSize;

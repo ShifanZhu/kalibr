@@ -7,6 +7,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <sm/logging.hpp>
 #include <aslam/cameras/GridDetector.hpp>
+#include <opencv2/highgui/highgui_c.h>
 
 namespace aslam {
 namespace cameras {

@@ -8,6 +8,7 @@
 #include <sm/assert_macros.hpp>
 #include <sm/logging.hpp>
 #include <aslam/cameras/GridCalibrationTargetAprilgrid.hpp>
+#include <opencv2/highgui/highgui_c.h>
 
 namespace aslam {
 namespace cameras {
@@ -164,7 +165,7 @@ bool GridCalibrationTargetAprilgrid::computeObservation(
         //show the duplicate tags in the image
         cv::destroyAllWindows();
         cv::namedWindow("Wild Apriltag detected. Hide them!");
-        cvStartWindowThread();
+        cv::startWindowThread();
 
         cv::Mat imageCopy = image.clone();
         cv::cvtColor(imageCopy, imageCopy, CV_GRAY2RGB);

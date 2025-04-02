@@ -4,7 +4,7 @@
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <aslam/cameras/GridCalibrationTargetCirclegrid.hpp>
-
+#include <opencv2/highgui/highgui_c.h>
 namespace aslam {
 namespace cameras {
 
